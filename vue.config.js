@@ -1,12 +1,22 @@
-module.exports={
-    devServer:{
-        open:true
-    },
-    configureWebpack:{
-        module: { // 配置所有第三方loader 模块的
-            rules: [
-                { test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader' }, // 处理 字体文件的 loader
-            ]
-        }
-    }
+const path = require('path');
+const resolve = function (dir) {
+    return path.join(__dirname, dir)
 }
+module.exports = {
+    devServer: {
+        open: true,
+        proxy: {
+            // detail: https://cli.vuejs.org/config/#devserver-proxy
+            ['/']: {
+                target: `http://localhost:3000`,
+            }
+        },
+    },
+        configureWebpack: {
+            resolve: {
+                alias: {
+                    '@': resolve('src')
+                }
+            }
+        },
+    }

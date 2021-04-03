@@ -1,16 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <m-header></m-header>
+    <tab></tab>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
-
+<script>
+  import MHeader from './components/m-header/m-header'
+  import Tab from './components/tab/tab'
+  export default {
+    components:{
+      MHeader,
+      Tab
+    }
+  }
+</script>
 <style lang="stylus">
   @import "assets/stylus/variable.styl"
-
-  #app
-    color $color-theme
 </style>
