@@ -1,19 +1,18 @@
 # vue-music
 
-## Project setup
+## 项目安装依赖
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 启动
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 编译打包
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 网易云音乐接口
+[感谢Binaryify/NeteaseCloudMusicApi](https://neteasecloudmusicapi.vercel.app/#/)
